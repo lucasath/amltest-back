@@ -13,11 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/tasks")
 public class TarefaController {
-    TarefaService tarefaService;
 
-    public TarefaController(TarefaService tarefaService) {
-        this.tarefaService = tarefaService;
-    }
+    @Autowired
+    TarefaService tarefaService;
 
     @PostMapping
     public TarefaResponse adicionarTarefa(@RequestBody TarefaRequest tarefaRequest) {

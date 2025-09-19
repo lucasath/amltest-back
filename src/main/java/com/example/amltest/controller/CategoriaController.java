@@ -12,11 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class CategoriaController {
+    @Autowired
     CategoriaService categoriaService;
-
-    public CategoriaController(CategoriaService categoriaService) {
-        this.categoriaService = categoriaService;
-    }
 
     @GetMapping("/categories")
     public List<CategoriaResponse> listarCategorias() {
