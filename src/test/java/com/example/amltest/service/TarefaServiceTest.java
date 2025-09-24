@@ -37,7 +37,7 @@ class TarefaServiceTest {
         TarefaRequest request = new TarefaRequest(titulo,"Teste descrição 1",  Mockito.mock(java.time.LocalDate.class), false, CategoriaEnum.ESTUDO);
 
         Tarefa tarefaEntity = new Tarefa();
-        tarefaEntity.setTitulo(request.titulo());
+        tarefaEntity.setTitulo(request.getTitulo());
 
         TarefaResponse response = new TarefaResponse(1L,titulo,"Teste descrição 1",  Mockito.mock(java.time.LocalDate.class), false, CategoriaEnum.ESTUDO);
 
