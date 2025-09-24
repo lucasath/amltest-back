@@ -39,7 +39,7 @@ public class TarefaService {
     }
 
     public TarefaResponse concluir(Long id) {
-        Tarefa tarefa = tarefaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Id do usuário não encontrato"));
+        Tarefa tarefa = tarefaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Tarefa não encontrada"));
         tarefa.setConcluida(true);
 
         return tarefaMapper.toResponse(tarefaRepository.save((tarefa)));
@@ -47,7 +47,7 @@ public class TarefaService {
 
     public void excluir(Long id) {
         if(!tarefaRepository.existsById((id))) {
-            throw new EntityNotFoundException(("Id do usuário não encontrato"));
+            throw new EntityNotFoundException(("Tarefa não encontrada"));
         }
 
         tarefaRepository.deleteById(id);

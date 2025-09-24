@@ -13,15 +13,15 @@ public class TarefaMapper {
 
     public Tarefa toEntity(TarefaRequest tarefaRequest) {
         Tarefa tarefa = new Tarefa();
-        tarefa.setTitulo(tarefaRequest.titulo());
-        tarefa.setDescricao((tarefaRequest.descricao()));
-        tarefa.setPrazo(tarefaRequest.prazo());
-        if(tarefaRequest.concluida() == null) {
+        tarefa.setTitulo(tarefaRequest.getTitulo());
+        tarefa.setDescricao((tarefaRequest.getDescricao()));
+        tarefa.setPrazo(tarefaRequest.getPrazo());
+        if(tarefaRequest.getConcluida() == null) {
             tarefa.setConcluida(false);
         } else {
-            tarefa.setConcluida(tarefaRequest.concluida());
+            tarefa.setConcluida(tarefaRequest.getConcluida());
         }
-        tarefa.setCategoria(tarefaRequest.categoria());
+        tarefa.setCategoria(tarefaRequest.getCategoria());
         return tarefa;
     }
 }
